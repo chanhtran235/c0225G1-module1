@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<input id="n1">
+<input id="n2">
+<p id="ketQua"></p>
+<button onclick="tinhTong()">Tính tổng</button>
+<body>
+  <script>
+      function tinhTong() {
+          console.log("ok")
+       let number1 = +document.getElementById("n1").value;
+       let number2 = +document.getElementById("n2").value;
+       let sum = number2+ number1;
+       document.getElementById("ketQua").innerText = "Kết quả là: "+  sum;
+
+      }
+      // let number1 = +prompt("nhập số thứ nhất: ");
+      // let number2 = +prompt("nhập số thứ nhất: ");
+      // let sum = number1+ number2;
+      // alert("Tổng của 2 số : "+ sum);
+  </script>
+</body>
+</html>
