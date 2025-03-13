@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4"><input id="window"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="1"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="2"></td>
+        <td><input type="button"  onclick="nhapLieu(this.value)" value="3"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="+"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="4"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="5"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="6"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="-"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="7"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="8"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="9"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="*"></td>
+    </tr>
+    <tr>
+        <td><input type="button"  value="C"></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="0"></td>
+        <td><input type="button" onclick="bang()" value="="></td>
+        <td><input type="button" onclick="nhapLieu(this.value)" value="/"></td>
+    </tr>
+</table>
+<script>
+    function nhapLieu(kyTu) {
+        document.getElementById("window").value +=kyTu;
+    }
+    function xoa() {
+        document.getElementById("window").value="";
+    }
+    // function so1() {
+    //      document.getElementById("window").value +=1;
+    // }
+    // function so2() {
+    //     document.getElementById("window").value +=2;
+    // }
+    // function cong() {
+    //     document.getElementById("window").value +="+";
+    // }
+    function bang() {
+        let chuoi = document.getElementById("window").value;
+        let ketQua = eval(chuoi);
+        document.getElementById("window").value =ketQua;
+    }
+</script>
+</body>
+</html>

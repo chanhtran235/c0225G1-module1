@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let soLuongSNT=0;
+    // let n =2;
+    // while (soLuongSNT<20){
+    //     let count =0;
+    //     for (let i = 1; i <=n ; i++) {
+    //         if (n%i==0){
+    //             count++;
+    //         }
+    //     }
+    //     // n là số nguyên tố
+    //     if (count ==2){
+    //         soLuongSNT++;
+    //         console.log(n);
+    //     }
+    //     n++;
+    // }
+
+
+    let soLuongSNT=0;
+    let n =2;
+    while (soLuongSNT<20){
+        let laSNT =true;
+        for (let i = 2; i <n ; i++) {
+            if (n%i==0){
+                laSNT =false;
+                break;
+            }
+        }
+        // n là số nguyên tố
+        if (laSNT){
+            soLuongSNT++;
+            console.log(n);
+        }
+        n++;
+    }
+
+    // kiểm tra 1 số n có phải là snt?
+    // let n = + prompt("nhập số cần kiểm tra");
+    // let count =0;
+    // for (let i = 1; i <=n ; i++) {
+    //     if (n%i==0){
+    //         count++;
+    //     }
+    // }
+    // if (count ==2){
+    //     alert(n + " là snt")
+    // }else {
+    //     alert("không phải là snt");
+    // }
+</script>
+</body>
+</html>

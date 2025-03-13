@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let danhSach = "";
+    let thoat = true;
+    let count =1
+    while (thoat) {
+
+        let chon = +prompt("Menu+\n" +
+                                "1. Cafe\n" +
+                                "2. Ca cao\n" +
+                                "3. Nước cam\n" +
+                                "4. Kết thúc\n");
+        switch (chon) {
+            case 1:
+                danhSach += count+ ".Cafe\n";
+                count ++;
+                break;
+            case 2:
+                danhSach += count+".Ca cao\n";
+                count++
+                break;
+            case 3:
+                danhSach += count+".Nước cam\n";
+                count++
+                break;
+            default:
+                thoat = false;
+
+        }
+    }
+    alert(" Danh sách đã chọn :\n" +danhSach);
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form {
+            width: 300px;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        div {
+            margin-top: 20px;
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h2 {
+            margin-left: 110px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 12px;
+            color: red;
+            margin-top: 0px;
+        }
+
+        button {
+            background-color: gray;
+            border: 1px solid yellow;
+            color: white;
+
+        }
+        div span{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h2>Đăng ký</h2>
+    <div>
+        <label for="id">ID</label>
+        <input id="id" name="id" onblur="checkValidate()">
+        <span id="idTick"></span>
+    </div>
+    <p id="idError"></p>
+    <div>
+        <label for="name">name</label>
+        <input id="name" name="name" onblur="checkValidate()">
+        <span id="nameTick"></span>
+    </div>
+    <p id="nameError"></p>
+    <div>
+        <label for="age">Age</label>
+        <input id="age" name="age" onblur="checkValidate()">
+        <span id="ageTick"></span>
+    </div>
+    <p id="ageError"></p>
+    <div style="justify-content: center">
+        <button disabled type="submit" id="btn-save">Save</button>
+    </div>
+
+</form>
+<script>
+    function checkValidate() {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let isIdOK = false;
+        let isNameOK = false;
+        let isAgeOK = false;
+        if (id !== "") {
+            document.getElementById("idError").innerText = "";
+            document.getElementById("idTick").innerHTML = "&#10004"
+            document.getElementById("idTick").style.color ="green";
+            isIdOK = true
+        } else {
+            document.getElementById("idError").innerText = "Khong duoc de trong!";
+            document.getElementById("idTick").innerHTML = "&#10008";
+            document.getElementById("idTick").style.color ="red";
+            isIdOK = false;
+        }
+
+        if (name !== "") {
+            document.getElementById("nameError").innerText = ""
+            document.getElementById("nameTick").innerHTML = "&#10004"
+            document.getElementById("nameTick").style.color ="green";
+            isNameOK = true;
+        } else {
+            document.getElementById("nameError").innerText = "Khong duoc de trong!"
+            document.getElementById("nameTick").innerHTML = "&#10008"
+            document.getElementById("nameTick").style.color ="red";
+            isNameOK = false;
+        }
+
+        if (age !== "") {
+            document.getElementById("ageError").innerText = ""
+            document.getElementById("ageTick").innerHTML = "&#10004";
+            document.getElementById("ageTick").style.color ="green";
+            isAgeOK = true;
+        } else {
+            document.getElementById("ageError").innerText = "Khong duoc de trong!"
+            document.getElementById("ageTick").innerHTML = "&#10008"
+            document.getElementById("ageTick").style.color ="red";
+            isAgeOK = false;
+        }
+
+
+        if (isIdOK && isNameOK && isAgeOK){
+            document.getElementById("btn-save").disabled = false;
+            document.getElementById("btn-save").style.backgroundColor ='blue';
+        }else {
+            document.getElementById("btn-save").disabled = true;
+            document.getElementById("btn-save").style.backgroundColor ='gray';
+        }
+    }
+</script>
+</body>
+</html>
