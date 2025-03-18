@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tiepTucMenu = true;
+    while (tiepTucMenu) {
+        let chon = +prompt("------------ Quản lý sinh viên ------------\n" +
+            "Hãy nhập số để chọn đồ uống\n" +
+            "1. Hiển thị danh sách sinh viên \n" +
+            "2. Thêm mới sinh viên\n" +
+            "3. Xoá sinh viên\n" +
+            "4. Kết thúc chương trình\n");
+        switch (chon) {
+            case 1:
+                alert("Chức năng hiện thi danh sách")
+                break;
+            case 2:
+                alert("Chức năng thêm mới sinh viên")
+                break;
+            case 3:
+                alert("Chức năng xoá sinh viên")
+                break;
+            default:
+                if (confirm('Bạn có muốn thoái chương trình không')) {
+                    tiepTucMenu = false;
+                }
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -5,36 +5,67 @@
     <title>Title</title>
 </head>
 <body>
+<button onclick="hienThiThucDon()">Menu</button>
 <script>
-    let danhSach = "";
-    let thoat = true;
-    let count =1
-    while (thoat) {
+    function hienThiThucDon() {
+        let danhSach = "";
+        let tiepTucMenu = true;
+        let dem = 1
+        let tongTien = 0;
+        let slCafe=0;
+        let cafeDaChon=false;
+        let caCaoDaChon=false;
+        let nuocCamDaChon=false;
+        let slCacao=0;
+        let slNuocCam=0;
+        while (tiepTucMenu) {
+            let chon = +prompt("---------------------- Menu---------- ------------\n" +
+                "Hãy nhập số để chọn đồ uống\n" +
+                "1. Cafe :          10K\n" +
+                "2. Ca cao:        15K\n" +
+                "3. Nước cam:   20K\n" +
+                "4. Kết thúc        \n" +
+                "---------------- Danh sách đã chon-----------------\n" + danhSach +
+                "                                                         $ Tổng tiền :" + tongTien + " K");
+            switch (chon) {
+                case 1:
+                    if (cafeDaChon){
+                        slCafe++
+                    }else {
+                        danhSach += dem + `.Cafe \n`;
+                        cafeDaChon = true;
+                        dem++;
+                    }
+                    tongTien += 10
 
-        let chon = +prompt("Menu+\n" +
-                                "1. Cafe\n" +
-                                "2. Ca cao\n" +
-                                "3. Nước cam\n" +
-                                "4. Kết thúc\n");
-        switch (chon) {
-            case 1:
-                danhSach += count+ ".Cafe\n";
-                count ++;
-                break;
-            case 2:
-                danhSach += count+".Ca cao\n";
-                count++
-                break;
-            case 3:
-                danhSach += count+".Nước cam\n";
-                count++
-                break;
-            default:
-                thoat = false;
-
+                    break;
+                case 2:
+                    if (caCaoDaChon){
+                        slCacao++
+                    }else {
+                        danhSach += dem + `.Cacao \n`;
+                        caCaoDaChon =true;
+                        dem++;
+                    }
+                    tongTien += 15
+                    break;
+                case 3:
+                    if (nuocCamDaChon){
+                        slNuocCam++
+                    }else {
+                        danhSach += dem + `.Nước Cam \n`;
+                        nuocCamDaChon =true;
+                        dem++;
+                    }
+                    tongTien += 20
+                    dem++
+                    break;
+                default:
+                    tiepTucMenu = false;
+            }
         }
+        alert("------Danh sách đã chọn------ :\n" + danhSach + "\n  $ Tổng tiền: " + tongTien + " K");
     }
-    alert(" Danh sách đã chọn :\n" +danhSach);
 </script>
 </body>
 </html>
